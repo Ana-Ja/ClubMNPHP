@@ -1,0 +1,9 @@
+<?php
+$GLOBALS["palabra"]="";
+$GLOBALS["sactividad"]="";
+$GLOBALS["texto"]="";
+$GLOBALS["filtro"]="";
+$_POST['sactividad']="";
+$_POST['palabra']="";
+header("location:Ver_asociados.php");
+?>

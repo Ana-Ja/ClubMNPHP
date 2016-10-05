@@ -1,0 +1,94 @@
+Una vez descargada y descomprimida, las únicas carpetas que necesitamos son include, lib y los ficheros dompdf_config.custom.inc.php y dompdf_config.inc.php.
+
+Nos copiaremos esas carpetas y esos ficheros a una carpeta de nuestro proyecto, por ejemplo a la carpeta /lib/pdf/.
+
+Configuración de la librería DOMPDF
+En el fichero dompdf_config.inc.php está la configuración por defecto de la aplicación, pero si queremos configurar nuestros parámetros podremos hacerlo editando el ficheor dompdf_config.custom.inc.php y descomentando las líneas que nos interesen y activando o desactivando sus valores, por ejemplo:
+
+//define("DOMPDF_TEMP_DIR", "/tmp");
+//define("DOMPDF_CHROOT", DOMPDF_DIR);
+define("DOMPDF_UNICODE_ENABLED", true);
+define("DOMPDF_PDF_BACKEND", "PDFLib"); //CPDF
+define("DOMPDF_DEFAULT_MEDIA_TYPE", "print");
+define("DOMPDF_DEFAULT_PAPER_SIZE", "A4");
+//define("DOMPDF_DEFAULT_FONT", "serif");
+//define("DOMPDF_DPI", 72);
+define("DOMPDF_ENABLE_PHP", true);
+define("DOMPDF_ENABLE_REMOTE", true);
+define("DOMPDF_ENABLE_CSS_FLOAT", true);
+//define("DOMPDF_ENABLE_JAVASCRIPT", false);
+//define("DEBUGPNG", true);
+//define("DEBUGKEEPTEMP", true);
+//define("DEBUGCSS", true);
+//define("DEBUG_LAYOUT", true);
+//define("DEBUG_LAYOUT_LINES", false);
+//define("DEBUG_LAYOUT_BLOCKS", false);
+//define("DEBUG_LAYOUT_INLINE", false);
+//define("DOMPDF_FONT_HEIGHT_RATIO", 1.0);
+//define("DEBUG_LAYOUT_PADDINGBOX", false);
+//define("DOMPDF_LOG_OUTPUT_FILE", DOMPDF_FONT_DIR."log.htm");
+//define("DOMPDF_ENABLE_HTML5PARSER", true);
+//define("DOMPDF_ENABLE_FONTSUBSETTING", true);
+ 
+// DOMPDF authentication
+//define("DOMPDF_ADMIN_USERNAME", "user");
+//define("DOMPDF_ADMIN_PASSWORD", "password");
+Uso básico de la librería DOMPDF
+Lo primero que tendremos que hacer es cargar la librería, y a partir de ahí podremos generar el documento HTML que luego imprimiremos.
+
+ATENCIÓN: Si no vamos a usar fuentes adicionales tendremos que ir a la línea 335 del fichero dompdf_config.inc.php y comentarla.
+
+Véase el siguiente ejemplo de utilización de dicha librería:
+
+
+<?php 
+# Cargamos la librería dompdf.
+require_once 'lib/pdf/dompdf_config.inc.php';
+ 
+# Contenido HTML del documento que queremos generar en PDF.
+$html='
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ejemplo de Documento en PDF.</title>
+</head>
+<body>
+ 
+<h2>Ingredientes para la realización de Postres.</h2>
+<p>Ingredientes:</p>
+<dl>
+<dt>Chocolate</dt>
+<dd>Cacao</dd>
+<dd>Azucar</dd>
+<dd>Leche</dd>
+<dt>Caramelo</dt>
+<dd>Azucar</dd>
+<dd>Colorantes</dd>
+</dl>
+ 
+</body>
+</html>';
+ 
+# Instanciamos un objeto de la clase DOMPDF.
+$mipdf = new DOMPDF();
+ 
+# Definimos el tamaño y orientación del papel que queremos.
+# O por defecto cogerá el que está en el fichero de configuración.
+$mipdf ->set_paper("A4", "portrait");
+ 
+# Cargamos el contenido HTML.
+$mipdf ->load_html(utf8_decode($html));
+//para evitar problemas con los acentos es mejor usar la sigueinte onstruccion mejor  que utf8_decode
+ $mipdf ->load_html($html, "UTF-8");
+# Renderizamos el documento PDF.
+$mipdf ->render();
+ 
+# Enviamos el fichero PDF al navegador.
+$mipdf ->stream('FicheroEjemplo.pdf');
+?>
+
+
+
+
+
+

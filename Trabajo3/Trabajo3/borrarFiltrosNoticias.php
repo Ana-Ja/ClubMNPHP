@@ -1,0 +1,9 @@
+<?php
+$GLOBALS["palabra"]="";
+$GLOBALS["noticia"]="";
+$GLOBALS["texto"]="";
+$GLOBALS["filtro"]="";
+$_POST['noticia']="";
+$_POST['palabra']="";
+header("location:misnews.php");
+?>

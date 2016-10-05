@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div id="map" style="height:500px"></div>
+	<script>
+
+	function initMap() {
+	  var map = new google.maps.Map(document.getElementById('map'), {
+	    center: {lat: 36.964, lng: -122.015},
+	    zoom: 18,
+	    mapTypeId: google.maps.MapTypeId.SATELLITE
+	  });
+	  map.setTilt(45);
+
+	  map.addListener('click',function(e){
+	  	//alert("hola");
+	  	//map.setCenter(e.latLng);
+	  	var marker = new google.maps.Marker({
+	  		position: e.latLng,
+	  		map:map,
+	  		title:"Estoy aquí"
+	  	});
+	  });
+	}
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwMOyk7AVl0kBAyZIdm5oaw8oPT3AuRcU&callback=initMap" type="text/javascript"></script>
+</body>
+</html>

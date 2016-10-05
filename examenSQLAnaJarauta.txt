@@ -1,0 +1,24 @@
+1.
+
+Select nombre, apellidos, fecha_ncto, salario from empleados where (fecha_ncto between '1979-01-01' and '2009-12-31') OR salario>20000 order by salario desc
+
+2. 
+Select nif, nombre, apellidos from empleados, departamentos where empleados.num_dpto = departamentos.num_dpto and empleados.nif=departamentos.nif_jefe;
+
+3.
+
+Select nombre_proy, localizacion, sum(horas)
+from proyectos, trabaja_en
+where proyectos.num_proy = trabaja_en.num_proy
+group by nombre_proy
+having nombre_proy like 'D%'
+order by nombre_proy 
+
+4.
+Select distinct nombre, apellidos, nombre_proy
+from proyectos, departamentos, empleados
+where proyectos.num_dpto = departamentos.num_dpto
+and departamentos.num_dpto= empleados.num_dpto 
+order by nombre_proy
+
+

@@ -1,0 +1,435 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {	
+	/*background: #8FB209;/*#748F07;#A8CE86   ; */
+	/*color:#192666;*/
+	font: 0.8em/1em Verdana, Arial, Helvetica, sans-serif;	
+	outline-style: none;
+}
+	
+:focus {outline:1px dashed #FF3300;}
+	
+#hd {
+  position: relative;
+  height:130px;
+  background: #8FB209;
+  /*margin: 0;
+  padding: 0; */ 
+/*  background: #8FB209 url("imagenes/verde.gif") repeat-x;
+  color: #FFF;
+  clear:both;*/
+}
+#bd {
+ margin: 0;
+  padding: 3em 3em 2em 0em;  
+ background:     #EFFCBA;
+ text-align:justify;	
+}
+#contenido {  
+  background: #f1f2ea;
+  /*margin-left: 200px;*/
+  padding:0 15px 0 3em;
+  background: #EFFCBA;  /*nocambiar*/
+  text-align:justify;
+  
+  font: 1em/1.5em Verdana, Arial, Helvetica, sans-serif;	
+}
+
+
+#barralateral {
+  padding: 3em 1em 2em 1em;  
+  background-color: #E6FA96 ;}
+
+#ft {
+  
+  color: #FFF;
+  text-align: center;
+  background-color:#8FB209;
+  height:70px;	
+  padding:0.3em ; 
+}
+.titulo {
+	color:#690;
+}
+ /********************Cabecera  *********************/
+#hd .direccion {
+		text-align:right;
+		padding-right:0.4em;
+		font-size:1.2em;
+	}
+	#reloj{
+		text-align:right;
+		padding-right:0.4em;
+		font-size:1em;
+		color:#fff;
+		line-height:2.2858;
+		background-color:transparent;
+	}	
+#hd address {
+		color:#fff;
+		line-height:2.2858;
+		background-color:transparent;
+	}
+#hd strong {
+		color:#fff;
+	}
+#hd #logo {
+  position: absolute;
+  top: 0;
+  left: 35px;
+  margin: 0;
+   padding:0;
+   background: #8FB209 url("../imagenes/logoRibera.jpg") no-repeat; 
+   width: 102px;
+   height:120px; 
+  }
+
+#logo p{ display:none;}
+
+#hd #buscador {
+  position: absolute;
+  top: 40px;
+  right: 3px;
+  clear:both;
+}
+
+#hd #buscador legend {
+  display: none;
+}
+
+#hd #buscador fieldset {
+  border: none;
+}
+
+/***************Menu horizontal ********************************/
+
+h5 span {
+visibility: hidden;
+}  	
+
+
+ul#menu-horizontal li {
+float: left;
+display: inline;
+position: relative;
+}
+
+ul#menu-horizontal ul {
+display: none;
+position: absolute;
+top: 26px;
+left:0;
+z-index:10;
+margin:0;
+padding:0;
+background:#8FB209;
+}
+
+#menu-horizontal li {
+margin:0 ;
+margin-right:2px;
+width:100px;
+height: 22px;
+text-align:center;
+background:#8FB209;
+list-style:none;
+padding:7px 0 1px 0;
+/*crea bordes redondos pero no se valida en CS2.1
+-moz-border-radius: 5px ; */
+}
+
+
+#menu-horizontal li:hover {
+background:#C5014F;
+}
+
+#menu-horizontal li a {
+font:bold 11px Arial, Helvetica, sans-serif;
+color:#FFF;
+text-decoration:none;
+display:block;  /*sea todo enlace, no solo letra*/
+}
+
+
+ul#menu-horizontal  li:hover > ul
+{
+   display:block;
+}
+/* este son los id que vamos a poner al body en cada pagina de nuestra site
+Segun en que pagina estemos, la linea del menu correspondiente tendra un
+color diferente en letra, fondo y borde */
+#pagini a#actual:link {
+ color: #C5014F;
+}
+#pagini a#actual:hover {
+ color: #FFF;
+}
+
+/***** login ****/
+#menu_horizontal_derecha a{
+	float:right;	
+	color: #192666;
+
+}
+#menu_horizontal_derecha img{
+	float:right;	
+
+}
+
+
+/*--------------enlaces de interes--------------------------*/
+#barralateral h3 {
+  
+    font-size: 1em;
+	color:#192666;
+	font-weight:bold;
+	 padding-left:1em;
+	  padding-bottom:1.5em;
+	 
+	 /*para conseguir efecto sombra en el texto, pero no lo valida cs2.1
+	/* text-shadow: #555 2px 2px 3px;*/
+
+  }
+.enlaces {
+ list-style-type:disc;
+ margin: 10px; 
+ padding: 0px; 
+
+}
+
+.enlaces li a{
+margin:0;
+font-size: 1em;
+padding-bottom:1em;
+color:#192666;
+width: 100%; 
+display: block; }
+
+.enlaces  li a:hover{
+color: #FF0033;
+}	
+
+	/*------------------- Menu02 ---------------------*/
+.menu02 ul{
+    margin:0;
+	padding:0;
+	height: 20px;
+	text-align:center;
+}
+
+.menu02 ul li{
+	list-style: none;
+	display: inline;
+}
+
+.menu02 ul li a{
+	color: #FFFFFF;
+	text-decoration:none;
+	margin-right:2em;
+
+}
+
+.menu02 ul li a:hover{
+color: #FF0033;
+
+}
+
+
+ 
+/********************************************************************/
+ 
+#contenido h1 {
+font-size: 1.5em;
+padding-bottom:0.3em;
+padding-top:0.5em;
+line-height:1.5em;}
+
+.ultimoparrafo {
+	margin-bottom: 0;
+}
+
+.centrar {text-align:center;}
+
+/*****************Pie ****************/
+.aviso{
+	color: #FFFFFF;
+}
+
+.aviso:hover{
+color: #FF0033;
+
+}
+
+/*************************Formulario *******************/
+.paraform {
+	margin: 5px 0 10px 0;
+       border: 1px solid #ddd;
+	  
+}
+
+.lineaanuncio {
+	margin: 0 0 15px 0;
+	padding: 15px;
+	border: 1px solid #ddd;
+	background-color: #FC3;
+	overflow:hidden;
+}
+
+.lineaanuncio p {
+	width: 	450px;
+	float:left;	
+	margin-top: 0;
+	
+}
+
+.datosadicionales{
+	float:right;
+	width: 	80px;
+	text-align:center; /*el texto y bandera centrado*/
+	/*font-size: 0.875px; */
+}
+.datosadicionales a {
+	text-decoration:none;
+}
+
+#recuadrocookieciudad {
+	
+	background-color:#FC3;
+	padding:10px;
+	overflow:hidden;
+}
+.itemciudad {
+	float:left;
+	margin-right: 10px;
+}
+ #recuadrocookieciudad  .mensaje{
+	 margin-bottom: 10px;
+}
+
+.campoformulario {
+	margin: 20px 10px 0;
+}
+/*********formulario de registro de usuario *****************/
+.campoformulario span {
+	width: 145px; /*para que todos los textos ocupen el mismo espacio*/
+	display: block; /*span es inline y no acepta el atributo width de css, por lo que lo hago de bloque*/
+	float:left; /*para que elsiguiente elemento a este span flote a la derecha, pq el span flota a la izquierda*/	
+	
+}
+.formerror{
+	padding:10px;
+	border:1px red solid;
+	background-color: #ffcccc;
+}
+#nuestrousuario{
+	padding:5px;
+	border:1px #999999 solid;
+	background-color: #ddf;
+	background-color:#FC3;
+	height: 35px;
+	margin-bottom: 15px;
+	font-size:0.6em;
+	overflow:hidden;
+}
+.cajalogin{
+	padding:5px;
+	border:1px #999999 solid;
+	background-color:#FC3;
+	height: 35px;
+	margin-bottom: 15px;
+	font-size:0.9em;
+	overflow:hidden;
+}
+
+.prueba {
+	margin-bottom:10px;}
+	
+.login {
+		margin-left:15px;
+	}
+th { text-align: left; background-color: #bbb; }
+th, td { padding: 0.4em; }
+tr.alt td { background: #ddd; }
+.error {background:#C00; color:white; padding:0.2em}	
+.campoformulario .error {background:#C00; color:red; padding:0.2em}
+h2 {
+	font-size: 1.2em;
+	
+}
+.midireccion{
+	padding:5px;
+	border:1px #999999 solid;
+	background-color: #ddf;
+	
+	height: 35px;
+	margin-bottom: 15px;
+	font-size:0.8em;
+	overflow:hidden;
+}
+ul.ventajas  {
+margin-left:2px;
+list-style:disc;
+padding:7px 0 1px 0;
+}
+/******* Asociados ******/
+#Asociado dl { width: 100%; margin: 2em 0; padding: 0; clear: both; overflow: auto; }
+#Asociado dt { width: 30%; float: left; margin: 0; padding: 5px 9.9% 5px 0; border-top: 1px solid #DDDDB7; font-weight: bold; overflow: auto; clear: left; }
+#Asociado dd { width: 60%; float: left; margin: 0; padding: 6px 0 5px 0; border-top: 1px solid #DDDDB7; overflow: auto; }
+
+#Asociados {
+	
+	 margin: 5px 0 10px 0;
+     padding:5px;
+	
+	border:1px #999999 solid;
+	overflow:hidden;
+	background-color:#FC3;
+	
+}
+
+/**********************************************************/
+.radio {
+	margin-left:150px;
+}
+.avanzar {
+	color:#192666;
+}
+
+.avanzar:hover{
+    color: #FF0033;
+
+}
+/************** Noticias *************/
+.recuadro {
+  
+  text-align:left;
+  font-size:0.9em;
+  border-width:0;
+  padding:5px;
+  
+  border:1px #999999 solid;
+	background-color:#FC3;
+}
+/*************** En alta noticia *********/
+#resultados{
+	font-size:1.2em;
+	color:#C00;
+}
+  /*****************************************************/
+    input { float: none; margin:0.5em 0 0em 0; width: auto; }
+      
+  label { display: inline; float: none;margin:0.5em 0 0 0; }
+  
+  /******************************************/
+ .busca1 {
+	 float:left;
+	margin: 1px 10px 5px 0;
+}
+
+.busca2 {
+	float:left;
+	 margin: 1px 0 5px 0;
+ 
+}
